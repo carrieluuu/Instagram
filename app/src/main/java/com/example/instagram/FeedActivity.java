@@ -38,7 +38,7 @@ public class FeedActivity extends AppCompatActivity {
         rvPosts.setAdapter(adapter);
         // set the layout manager on the recycler view
         rvPosts.setLayoutManager(new LinearLayoutManager(this));
-        // query posts from Parstagram
+        // query posts from Instagram
         queryPosts();
     }
 

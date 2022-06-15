@@ -36,10 +36,12 @@ public class MainActivity extends AppCompatActivity {
     private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 42;
 
     private Button btnLogout;
-    private EditText etDescription;
     private Button btnCaptureImage;
-    private ImageView ivPostImage;
     private Button btnSubmit;
+    private Button btnFeed;
+
+    private EditText etDescription;
+    private ImageView ivPostImage;
     private File photoFile;
 
     public String photoFileName = "photo.jpg";
@@ -91,6 +93,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.i(TAG, "onClick logout button");
                 logoutUser();
+            }
+        });
+
+        // Feed button
+        btnFeed = findViewById(R.id.btnFeed);
+        btnFeed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "onClick feed button");
+                goToFeed();
             }
         });
     }
@@ -207,6 +219,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void goLoginActivity() {
         Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
+        finish();
+    }
+
+    private void goToFeed() {
+        Intent i = new Intent(this, FeedActivity.class);
         startActivity(i);
         finish();
     }
