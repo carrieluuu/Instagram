@@ -43,6 +43,7 @@ public class FeedActivity extends AppCompatActivity {
         queryPosts();
 
         swipeRefresh();
+
     }
 
     private void swipeRefresh() {

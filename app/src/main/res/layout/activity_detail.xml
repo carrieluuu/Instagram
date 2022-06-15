@@ -2,29 +2,38 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/dividers"
-    android:padding="10dp"
-    tools:context=".FeedActivity"
-    android:clickable="true">
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:padding="20dp">
 
     <TextView
         android:id="@+id/tvUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@id/ivImage"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         tools:text="username" />
+
+    <TextView
+        android:id="@+id/tvRelativeTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/ivImage"
+        android:layout_alignBottom="@+id/tvUsername"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="7dp"
+        tools:text="2m ago" />
 
     <ImageView
         android:id="@+id/ivImage"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="36dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="35dp"
         android:scaleType="centerCrop"
         tools:srcCompat="@tools:sample/avatars" />
 
