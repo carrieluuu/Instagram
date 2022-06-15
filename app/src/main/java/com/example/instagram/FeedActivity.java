@@ -26,11 +26,10 @@ public class FeedActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_feed);
 
         rvPosts = findViewById(R.id.rvPosts);
 
-        // initialize the array that will hold posts and create a PostsAdapter
         allPosts = new ArrayList<>();
         adapter = new PostsAdapter(this, allPosts);
 
@@ -38,7 +37,7 @@ public class FeedActivity extends AppCompatActivity {
         rvPosts.setAdapter(adapter);
         // set the layout manager on the recycler view
         rvPosts.setLayoutManager(new LinearLayoutManager(this));
-        // query posts from Instagram
+        // query posts from Parstagram
         queryPosts();
     }
 
@@ -72,4 +71,6 @@ public class FeedActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
