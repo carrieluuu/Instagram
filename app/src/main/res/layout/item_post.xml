@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/dividers"
+    android:clickable="true"
     android:padding="10dp"
-    tools:context=".FeedActivity"
-    android:clickable="true">
+    tools:context=".FeedActivity">
 
     <TextView
         android:id="@+id/tvUsername"
@@ -30,11 +30,13 @@
 
     <TextView
         android:id="@+id/tvDescription"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tvNumLikes"
-        android:layout_alignStart="@id/ivImage"
+        android:layout_alignBottom="@id/tvUsernameSmall"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/tvUsernameSmall"
         tools:text="sample description" />
 
     <ImageButton
@@ -44,7 +46,7 @@
         android:layout_below="@+id/ivImage"
         android:layout_alignStart="@id/ivImage"
         android:layout_marginStart="3dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="5dp"
         android:adjustViewBounds="true"
         android:background="#FFFFFF"
         android:scaleType="fitCenter"
@@ -57,7 +59,7 @@
         android:layout_below="@+id/ivImage"
         android:layout_alignBottom="@+id/btnLike"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="2dp"
         android:layout_toEndOf="@+id/btnLike"
         android:adjustViewBounds="true"
@@ -68,11 +70,11 @@
     <ImageButton
         android:id="@+id/btnSave"
         android:layout_width="30dp"
-        android:layout_height="36dp"
+        android:layout_height="30dp"
         android:layout_below="@+id/ivImage"
         android:layout_alignEnd="@id/ivImage"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="5dp"
         android:adjustViewBounds="true"
         android:background="#FFFFFF"
         android:scaleType="fitCenter"
@@ -85,8 +87,26 @@
         android:layout_below="@+id/btnLike"
         android:layout_alignStart="@id/ivImage"
         android:layout_marginTop="7dp"
-        android:text="0"
         android:textStyle="bold"
         tools:text="300 likes" />
+
+    <TextView
+        android:id="@+id/tvUsernameSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvNumLikes"
+        android:layout_alignStart="@id/ivImage"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        tools:text="carrie" />
+
+    <TextView
+        android:id="@+id/tvViewComments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvUsernameSmall"
+        android:layout_alignStart="@id/tvUsernameSmall"
+        android:padding="3dp"
+        android:text="View all comments" />
 
 </RelativeLayout>

@@ -25,6 +25,7 @@ public class DetailActivity extends AppCompatActivity {
     private TextView tvUsername;
     private TextView tvDescription;
     private TextView tvTimestamp;
+    private TextView tvUsernameSmall;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,6 +36,7 @@ public class DetailActivity extends AppCompatActivity {
         tvUsername = findViewById(R.id.tvUsername);
         tvDescription = findViewById(R.id.tvDescription);
         tvTimestamp = findViewById(R.id.tvTimestamp);
+        tvUsernameSmall = findViewById(R.id.tvUsernameSmall);
 
         post = (Post) Parcels.unwrap(getIntent().getParcelableExtra(Post.class.getSimpleName()));
         Log.d(TAG, String.format("Showing details for '%s'", post.getDescription()));
@@ -43,6 +45,7 @@ public class DetailActivity extends AppCompatActivity {
         tvDescription.setText(post.getDescription());
         Date createdAt = post.getCreatedAt();
         tvTimestamp.setText(Post.calculateTimeAgo(createdAt));
+        tvUsernameSmall.setText(post.getUser().getUsername());
 
         ParseFile image = post.getImage();
         if (image != null) {
