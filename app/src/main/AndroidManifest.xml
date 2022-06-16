@@ -32,7 +32,6 @@
         <activity
             android:name=".FeedActivity"
             android:exported="false" />
-
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.codepath.fileprovider"

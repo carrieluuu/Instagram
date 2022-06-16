@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -12,6 +13,9 @@ import com.example.instagram.adapters.PostsAdapter;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
+import com.parse.SaveCallback;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +48,18 @@ public class FeedActivity extends AppCompatActivity {
 
         swipeRefresh();
 
+    }
+
+    private void postDetails() {
+        Post post = new Post();
+        post.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                Intent i = new Intent(FeedActivity.this, DetailActivity.class);
+                i.putExtra("post", Parcels.wrap(post));
+                startActivity(i);
+            }
+        });
     }
 
     private void swipeRefresh() {
@@ -104,6 +120,5 @@ public class FeedActivity extends AppCompatActivity {
             }
         });
     }
-
 
 }

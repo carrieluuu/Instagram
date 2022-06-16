@@ -18,7 +18,7 @@
         tools:text="username" />
 
     <TextView
-        android:id="@+id/tvRelativeTime"
+        android:id="@+id/tvTimestamp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@id/ivImage"
