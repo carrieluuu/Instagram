@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.instagram.Post;
 import com.example.instagram.R;
 import com.parse.ParseFile;
@@ -28,6 +29,8 @@ public class DetailActivity extends AppCompatActivity {
     private TextView tvDescription;
     private TextView tvTimestamp;
     private TextView tvUsernameSmall;
+    private ImageView ivProfilePic;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,6 +42,8 @@ public class DetailActivity extends AppCompatActivity {
         tvDescription = findViewById(R.id.tvDescription);
         tvTimestamp = findViewById(R.id.tvTimestamp);
         tvUsernameSmall = findViewById(R.id.tvUsernameSmall);
+        ivProfilePic = findViewById(R.id.ivProfilePic);
+
 
         post = (Post) Parcels.unwrap(getIntent().getParcelableExtra(Post.class.getSimpleName()));
         Log.d(TAG, String.format("Showing details for '%s'", post.getDescription()));
@@ -53,6 +58,12 @@ public class DetailActivity extends AppCompatActivity {
         if (image != null) {
             Glide.with(this).load(image.getUrl()).into(ivImage);
         }
+
+        ParseFile profilePic = post.getUser().getParseFile("profilePic");
+        if (profilePic != null) {
+            Glide.with(this).load(profilePic.getUrl()).apply(RequestOptions.circleCropTransform()).into(ivProfilePic);
+        }
+
     }
 
 }

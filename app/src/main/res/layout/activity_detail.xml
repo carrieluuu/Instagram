@@ -5,13 +5,16 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:padding="20dp">
-
     <TextView
         android:id="@+id/tvUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@id/ivImage"
+        android:layout_alignRight="@id/ivProfilePic"
+        android:layout_marginStart="53dp"
         android:layout_marginTop="0dp"
+        android:layout_marginRight="-102dp"
+        android:paddingTop="5dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         tools:text="username" />
@@ -22,6 +25,7 @@
         android:layout_height="300dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="36dp"
+        android:paddingTop="5dp"
         android:scaleType="centerCrop"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -29,10 +33,10 @@
         android:id="@+id/tvDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvNumLikes"
+        android:layout_below="@id/btnLike"
         android:layout_alignBottom="@id/tvUsernameSmall"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:layout_toEndOf="@id/tvUsernameSmall"
         tools:text="sample description" />
 
@@ -78,39 +82,30 @@
         app:srcCompat="@drawable/ufi_save" />
 
     <TextView
-        android:id="@+id/tvNumLikes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnLike"
-        android:layout_alignStart="@id/ivImage"
-        android:layout_marginTop="7dp"
-        android:textStyle="bold"
-        tools:text="300 likes" />
-
-    <TextView
         android:id="@+id/tvUsernameSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvNumLikes"
+        android:layout_below="@id/btnLike"
         android:layout_alignStart="@id/ivImage"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:textStyle="bold"
         tools:text="carrie" />
 
-    <TextView
-        android:id="@+id/tvViewComments"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvUsernameSmall"
-        android:layout_alignStart="@id/tvUsernameSmall"
-        android:layout_marginTop="3dp"
-        android:text="View all comments" />
+    <ImageView
+        android:id="@+id/ivProfilePic"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignStart="@id/ivImage"
+        android:layout_alignBottom="@id/tvUsername"
+        android:paddingTop="5dp"
+        tools:layout_editor_absoluteX="6dp"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvTimestamp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvViewComments"
+        android:layout_below="@id/tvUsernameSmall"
         android:layout_alignStart="@id/tvUsernameSmall"
         android:layout_marginTop="3dp"
         android:textSize="10sp"
