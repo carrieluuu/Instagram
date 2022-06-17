@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,9 @@ import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.SystemClock;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,10 +24,12 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.instagram.BitmapScaler;
 import com.example.instagram.LoginActivity;
+import com.example.instagram.MainActivity;
 import com.example.instagram.Post;
 import com.example.instagram.R;
 import com.parse.ParseException;
@@ -44,12 +50,14 @@ public class ComposeFragment extends Fragment {
     public static final String TAG = "ComposeFragment";
 
     public static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 42;
-    public static final int WIDTH = 500;
+    public static final int WIDTH = 600;
 
     private EditText etDescription;
     private Button btnCaptureImage;
     private ImageView ivPostImage;
     private Button btnSubmit;
+
+    private ProgressBar pbPosting;
 
     private File photoFile;
     public String photoFileName = "photo.jpg";
@@ -75,6 +83,8 @@ public class ComposeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         etDescription = view.findViewById(R.id.etDescription);
         ivPostImage = view.findViewById(R.id.ivPostImage);
+        pbPosting = view.findViewById(R.id.pbPosting);
+        pbPosting.setMax(10);
 
         captureButton(view);
         submitButton(view);
@@ -191,8 +201,47 @@ public class ComposeFragment extends Fragment {
                 }
                 ParseUser currentUser = ParseUser.getCurrentUser();
                 savePost(description, currentUser, photoFile);
+
+                new DelayTask().execute(15);
+
             }
         });
+    }
+
+    class DelayTask extends AsyncTask<Integer, Integer, String> {
+        int count = 0;
+
+        @Override
+        protected void onPreExecute() {
+            pbPosting.setVisibility(ProgressBar.VISIBLE);
+        }
+        @Override
+        protected String doInBackground(Integer... params) {
+            while (count < 5) {
+                SystemClock.sleep(1000);
+                count++;
+                publishProgress(count * 20);
+            }
+
+            final Handler handler = new Handler(Looper.getMainLooper());
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    goMainActivity();
+                }
+            }, 50);
+
+            return "Complete";
+        }
+        @Override
+        protected void onPostExecute(String result) {
+            pbPosting.setVisibility(View.GONE);
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            pbPosting.setProgress(values[0]);
+        }
     }
 
     private void savePost(String description, ParseUser currentUser, File photoFile) {
@@ -212,6 +261,11 @@ public class ComposeFragment extends Fragment {
                 ivPostImage.setImageResource(0);
             }
         });
+    }
+
+    private void goMainActivity() {
+        Intent i = new Intent(getContext(), MainActivity.class);
+        startActivity(i);
     }
 
 
