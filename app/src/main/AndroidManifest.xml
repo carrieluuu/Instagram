@@ -36,7 +36,7 @@
                 android:resource="@xml/fileprovider" />
         </provider>
 
-        <activity
+        <activity android:theme="@style/Theme.AppCompat.Light"
             android:name=".login.LoginActivity"
             android:exported="true">
             <intent-filter>
