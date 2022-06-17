@@ -6,8 +6,7 @@
     android:layout_height="wrap_content"
     android:background="@drawable/dividers"
     android:clickable="true"
-    android:padding="10dp"
-    tools:context=".FeedActivity">
+    android:padding="10dp">
 
     <TextView
         android:id="@+id/tvUsername"
@@ -32,7 +31,7 @@
         android:id="@+id/tvDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvNumLikes"
+        android:layout_below="@id/btnLike"
         android:layout_alignBottom="@id/tvUsernameSmall"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
@@ -81,20 +80,10 @@
         app:srcCompat="@drawable/ufi_save" />
 
     <TextView
-        android:id="@+id/tvNumLikes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnLike"
-        android:layout_alignStart="@id/ivImage"
-        android:layout_marginTop="7dp"
-        android:textStyle="bold"
-        tools:text="300 likes" />
-
-    <TextView
         android:id="@+id/tvUsernameSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvNumLikes"
+        android:layout_below="@id/btnLike"
         android:layout_alignStart="@id/ivImage"
         android:layout_marginTop="10dp"
         android:textStyle="bold"

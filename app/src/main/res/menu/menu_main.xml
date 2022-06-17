@@ -3,13 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/compose"
-        android:icon="@drawable/ufi_new_post"
-        android:title="Compose"
-        app:showAsAction="always" />
-
-
-    <item
         android:id="@+id/btnLogout"
         android:icon="@drawable/ufi_logout"
         android:title="Item"
