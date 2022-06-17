@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.instagram.DetailActivity;
+import com.example.instagram.feed.DetailActivity;
 import com.example.instagram.Post;
 import com.example.instagram.R;
 import com.parse.ParseFile;

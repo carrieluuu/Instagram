@@ -1,4 +1,4 @@
-package com.example.instagram;
+package com.example.instagram.feed;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.instagram.Post;
+import com.example.instagram.R;
 import com.parse.ParseFile;
 
 import org.parceler.Parcels;

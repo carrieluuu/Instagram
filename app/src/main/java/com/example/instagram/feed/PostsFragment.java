@@ -1,4 +1,4 @@
-package com.example.instagram.fragments;
+package com.example.instagram.feed;
 
 import android.os.Bundle;
 
@@ -14,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.instagram.EndlessRecyclerViewScrollListener;
 import com.example.instagram.Post;
 import com.example.instagram.R;
 import com.example.instagram.adapters.PostsAdapter;

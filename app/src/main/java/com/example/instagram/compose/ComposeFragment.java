@@ -1,4 +1,4 @@
-package com.example.instagram.fragments;
+package com.example.instagram.compose;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -27,8 +27,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.instagram.BitmapScaler;
-import com.example.instagram.LoginActivity;
 import com.example.instagram.MainActivity;
 import com.example.instagram.Post;
 import com.example.instagram.R;

@@ -11,9 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import com.example.instagram.fragments.ComposeFragment;
-import com.example.instagram.fragments.PostsFragment;
+import com.example.instagram.compose.ComposeFragment;
+import com.example.instagram.feed.PostsFragment;
 import com.example.instagram.fragments.ProfileFragment;
+import com.example.instagram.login.LoginActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.parse.LogOutCallback;
 import com.parse.ParseException;
