@@ -5,7 +5,7 @@ Meta University - CodePath Project 3
 
 **Instagram** is a photo sharing app using Parse as its backend.
 
-Time spent: **48** hours spent in total
+Time spent: **50** hours spent in total
 
 ## User Stories
 
