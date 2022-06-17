@@ -54,7 +54,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-![App Demo Link](app/instagram-demo.gif)
+<img src="app/instagram-demo.gif" height="500">
 
 GIF created with [Convertio](https://convertio.co/video-converter/).
 
